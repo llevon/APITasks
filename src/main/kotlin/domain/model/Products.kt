@@ -9,4 +9,5 @@ data class Products(
     val productTitle: String,
     @SerializedName("price")
     val productPrice: Double
+
 )
