@@ -1,36 +1,48 @@
 package org.example
 
-import kotlinx.coroutines.runBlocking
-import org.example.data.CartsRepositoryImpl
-import org.example.domain.model.Carts
-import org.example.domain.model.Products
+import kotlinx.coroutines.CoroutineName
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import org.example.di.AppComponent
+import org.example.domain.model.SignInModel
+import org.example.domain.utils.Resource
 
 fun main() {
-
-    val cartsRepository = CartsRepositoryImpl()
-    runBlocking {
-        try {
-            //val carts = cartsRepository.getCarts()
-            //val carts1 = cartsRepository.getAllCarts()
-            //println(carts)
-            //println(carts1)
-        } catch (e: Exception) {
-            println("Error: ${e.message}")
+    val coroutineScope = CoroutineScope(CoroutineName("my_coroutine"))
+    val signInUseCase = AppComponent.signInUseCase
+    val getCartsUseCase = AppComponent.getCartsUseCase
+    val signInModel = SignInModel(username ="kminchelle" , password = "0lelplR")
+    signInUseCase(signInModel)
+        .flowOn(Dispatchers.IO)
+        .onEach {
+            signInState->
+            when(signInState)
+            {
+                Resource.Loading -> println("is Loading")
+                is Resource.Error -> println(signInState.exception.message)
+                is Resource.Success -> {
+                    println("success")
+                    getCartsUseCase()
+                        .flowOn(Dispatchers.IO)
+                        .onEach {
+                            getCartsState ->
+                            when(getCartsState) {
+                                Resource.Loading -> println("loading carts")
+                                is Resource.Error -> println(getCartsState.exception.message)
+                                is Resource.Success -> println(getCartsState.model)
+                            }
+                        }
+                        .flowOn(Dispatchers.Unconfined)
+                        .launchIn(coroutineScope)
+                }
+            }
         }
+        .flowOn(Dispatchers.Unconfined)
+        .launchIn(coroutineScope)
 
-        val product1 = Products(1, "Product1", 10.0)
-        val product2 = Products(2, "Product2", 15.0)
-        val cartId = 1
-        val products = listOf(product1, product2)
-        val total = product1.productPrice + product2.productPrice
-        val addedCart = cartsRepository.addCart(cartId, products, total)
-        if (addedCart != null) {
-            println("Cart added successfully: $addedCart")
-        } else {
-            println("Failed to add cart.")
-        }
-
-    }
-
+    Thread.sleep(5000)
 }
 

@@ -4,16 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80372e60-2491-4765-8635-4ee4156e3cb9" name="Changes" comment="first">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/domain/model/Carts.kt" afterDir="false" />
+    <list default="true" id="80372e60-2491-4765-8635-4ee4156e3cb9" name="Changes" comment="second, works only by id">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/api/AuthInterceptor.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/local/TokenDataSource.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/model/AllCartsResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/model/SignInRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/model/SignInResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/di/AppComponent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/domain/GetCartsUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/domain/SignInUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/domain/model/SignInModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/domain/utils/Resource.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/CartsRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/data/CartsRepositoryImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/api/APIConstants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/data/api/APIConstants.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/api/APIService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/data/api/APIService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/mapper/ProductsMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/data/mapper/ProductsMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/model/CartsResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/data/model/CartResponse.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/domain/CartsRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/domain/CartsRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/domain/model/Products.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/domain/model/Products.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/domain/model/Carts.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/domain/model/Cart.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,10 +38,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="Kotlin File" />
         <option value="Kotlin Interface" />
+        <option value="Kotlin Object" />
         <option value="Kotlin Data Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -95,11 +106,39 @@
       <option name="project" value="LOCAL" />
       <updated>1709499360999</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="second, works only by id">
+      <option name="closed" value="true" />
+      <created>1709511818027</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709511818027</updated>
+    </task>
+    <task id="LOCAL-00004" summary="second, works only by id">
+      <option name="closed" value="true" />
+      <created>1709511851086</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709511851086</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first" />
-    <option name="LAST_COMMIT_MESSAGE" value="first" />
+    <MESSAGE value="second, works only by id" />
+    <option name="LAST_COMMIT_MESSAGE" value="second, works only by id" />
   </component>
 </project>
